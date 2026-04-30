@@ -1,15 +1,14 @@
 let IR_waarde = 0
+let vooruit = 253
+let achteruit = 125
+let links = 31
+let rechts = 6
 IR.IR_init()
 basic.forever(function () {
     IR_waarde = IR.IR_read()
 })
 basic.forever(function () {
-    basic.showNumber(IR_waarde)
-})
-basic.forever(function () {
-    let vooruit = 0
     if (IR_waarde == vooruit) {
-        let rechts = 0
         basic.showLeds(`
             . . # . .
             . # # # .
@@ -18,7 +17,6 @@ basic.forever(function () {
             . . # . .
             `)
         if (IR_waarde == rechts) {
-            let achteruit = 0
             basic.showLeds(`
                 . . # . .
                 . . . # .
@@ -27,7 +25,6 @@ basic.forever(function () {
                 . . # . .
                 `)
             if (IR_waarde == achteruit) {
-                let links = 0
                 basic.showLeds(`
                     . . # . .
                     . . # . .
@@ -57,4 +54,7 @@ basic.forever(function () {
             }
         }
     }
+})
+basic.forever(function () {
+	
 })
